@@ -1,14 +1,14 @@
 output "s3_bucket_name" {
+  description = "Name of the S3 state bucket."
   value       = aws_s3_bucket.terraform_state.id
-  description = "The NAME of the S3 bucket"
 }
 
 output "s3_bucket_arn" {
+  description = "ARN of the S3 state bucket."
   value       = aws_s3_bucket.terraform_state.arn
-  description = "The ARN of the S3 bucket"
 }
 
 output "s3_bucket_region" {
-  value       = aws_s3_bucket.terraform_state.region
-  description = "The REGION of the S3 bucket"
+  description = "AWS region of the S3 state bucket."
+  value       = data.aws_region.current.region
 }
